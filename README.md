@@ -37,52 +37,52 @@
 
 $$
 \begin{eqnarray}
-\frac{ \boldsymbol{x}_{k+1} - \boldsymbol{x}_{k} }{\Delta t} = \boldsymbol{f}({\boldsymbol{x}_k})  +\boldsymbol{G} \boldsymbol{w}
+\frac{ \boldsymbol{x}\_{k+1} - \boldsymbol{x}\_{k} }{\Delta t} = \boldsymbol{f}({\boldsymbol{x}\_k})  +\boldsymbol{G} \boldsymbol{w}
 \end{eqnarray}
 $$
 
 
 
-${\boldsymbol{x}}_{k+1}$について整理すると
+${\boldsymbol{x}}\_{k+1}$について整理すると
 
-<div align="center">$
+$$
 \begin{eqnarray}
-{\boldsymbol{x}}_{k+1}  = {\boldsymbol{x}}_{k}+{\boldsymbol{f}({\boldsymbol{x}_k})} {\Delta t}  +{\boldsymbol{G}}{\boldsymbol{w}}{\Delta t}
+{\boldsymbol{x}}\_{k+1}  = {\boldsymbol{x}}\_{k}+{\boldsymbol{f}({\boldsymbol{x}\_k})} {\Delta t}  +{\boldsymbol{G}}{\boldsymbol{w}}{\Delta t}
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 ここで、次の様な置き換えを行うと（添字$d$はDiscrete（離散）の頭文字dです。）
 
-<div align="center">$
+$$
 \begin{eqnarray}
-{\boldsymbol{f}_d \boldsymbol{(x}_k  \boldsymbol{)}}={\boldsymbol{x}}_{k} + {\boldsymbol{f(x}_k \boldsymbol{)}} \Delta t
+{\boldsymbol{f}\_d \boldsymbol{(x}\_k  \boldsymbol{)}}={\boldsymbol{x}}\_{k} + {\boldsymbol{f(x}\_k \boldsymbol{)}} \Delta t
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
-<div align="center">$
+$$
 \begin{eqnarray}
-{\boldsymbol{G}}_k={\boldsymbol{G}} \Delta t
+\boldsymbol{G}\_k=\boldsymbol{G} \Delta t
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 離散化状態方程式は次の様に、見た目は離散化前と同じ様な式になります。
 
-<div align="center">$
+$$
 \begin{eqnarray}
-{\boldsymbol{x}}_{k+1}={\boldsymbol{f}_d \boldsymbol{(x}_k \boldsymbol{)} }+{\boldsymbol{G}}_k {\boldsymbol{w}}
+{\boldsymbol{x}}\_{k+1}={\boldsymbol{f}\_d \boldsymbol{(x}\_k \boldsymbol{)} }+{\boldsymbol{G}}\_k {\boldsymbol{w}}
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 
-##### ヤコビアンの導出
+### ヤコビアンの導出
 
 ベクトル関数をベクトルで偏微分したものをヤコビアンと呼びます。
 ヤコビアンは行列になります。
@@ -94,34 +94,33 @@ $</div>
 状態方程式の${\boldsymbol{f}\_d}({\boldsymbol{x}\_k})$と観測方程式の${\boldsymbol{h}}({\boldsymbol{x}}\_k)$を状態量ベクトルで編微分して
 以下の様に、それぞれを${\boldsymbol{F}}({\boldsymbol{x}}\_k)$、${\boldsymbol{H}}({\boldsymbol{x}}\_k)$ とします。
 
-<div align="center">$
+$$
 \begin{eqnarray}
-{\boldsymbol{F}}({\boldsymbol{x}}_k) =\frac{\partial \boldsymbol{f}_d}{\partial \boldsymbol{x}_k} 
-={\boldsymbol{I}}+\frac{\partial \boldsymbol{f}}{\partial \boldsymbol{x}_k} \Delta t
-
+{\boldsymbol{F}}({\boldsymbol{x}}\_k) =\frac{\partial \boldsymbol{f}\_d}{\partial \boldsymbol{x}\_k} 
+={\boldsymbol{I}}+\frac{\partial \boldsymbol{f}}{\partial \boldsymbol{x}\_k} \Delta t
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 
-<div align="center">$
+$$
 \begin{eqnarray}
-{\boldsymbol{H}}({\boldsymbol{x}}_k) =\frac{\partial \boldsymbol{h}}{\partial \boldsymbol{x}_k} 
+{\boldsymbol{H}}({\boldsymbol{x}}\_k) =\frac{\partial \boldsymbol{h}}{\partial \boldsymbol{x}\_k} 
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 特に${\boldsymbol{F}}({\boldsymbol{x}}\_k)$については、離散化された状態方程式のヤコビアンなので注意してください。
 
-##### ヤコビアンについて
+### ヤコビアンについて
 
 ベクトルをベクトルで編微分すると行列になり、ヤコビアンと呼ばれています。具体例は次の様になります。
 
 微分される関数ベクトルを次の様なものとします。
 
-<div align="center">$
+$$
 \begin{eqnarray}
 {\boldsymbol{f}} =
 \begin{bmatrix}
@@ -130,11 +129,11 @@ f_1 &f_2 & f_3
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 微分するベクトルを次な様なものとします。
 
-<div align="center">$
+$$
 \begin{eqnarray}
 {\boldsymbol{x}} =
 \begin{bmatrix}
@@ -143,11 +142,11 @@ x_1 &x_2 & x_3 & x_4
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 すると、ヤコビアンは次の様な行列になります。
 
-<div align="center">$
+$$
 \begin{eqnarray}
 \frac{\partial \boldsymbol{f}}{\partial \boldsymbol{x}} =
 \begin{bmatrix}
@@ -158,11 +157,9 @@ $</div>
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
-
-
-####
+## アルゴリズム
 
 拡張カルマンフィルタは以下に示す、観測更新と予測更新を各ステップごとに繰り返していきます。
 
@@ -178,77 +175,77 @@ $</div>
 ここでは、推定された値にはハット（＾）を、予測された値にはバー（ー）を記号の上につけることにします。
 
 
-##### 観測更新
+### 観測更新
 
-###### 観測方程式ヤコビアンの準備
+#### 観測方程式ヤコビアンの準備
 
-<div align="center">$
+$$
 \begin{eqnarray}
-{\boldsymbol{H}}_k =\left. \frac{\partial \boldsymbol{h}}{\partial \boldsymbol{x}_k} \right|_{{\boldsymbol{x}}_k = \bar{\boldsymbol{x}}_k} 
+{\boldsymbol{H}}\_k =\left. \frac{\partial \boldsymbol{h}}{\partial \boldsymbol{x}\_k} \right|_{{\boldsymbol{x}}\_k = \bar{\boldsymbol{x}}\_k} 
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
-###### カルマンゲイン更新
-<div align="center">$
+#### カルマンゲイン更新
+$$
 \begin{eqnarray}
-{\boldsymbol{K}}_k =\bar{\boldsymbol{P}}_k {{\boldsymbol{H}}_k}^\mathsf{T} {\left\[ {{\boldsymbol{H}}_k} {\bar{\boldsymbol{P}}_k} {{\boldsymbol{H}}_k}^\mathsf{T} + {\boldsymbol{R}} \right\$}^{-1}
+{\boldsymbol{K}}\_k =\bar{\boldsymbol{P}}\_k {{\boldsymbol{H}}\_k}^\mathsf{T} {\left\[ {{\boldsymbol{H}}\_k} {\bar{\boldsymbol{P}}\_k} {{\boldsymbol{H}}\_k}^\mathsf{T} + {\boldsymbol{R}} \right\]} ^{-1}
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 
-###### 状態推定
-<div align="center">$
+#### 状態推定
+$$
 \begin{eqnarray}
-\hat{\boldsymbol{x}}_k =\bar{\boldsymbol{x}}_{k} + {\boldsymbol{K}}_k \left\[ {\boldsymbol{z}}_k - {\boldsymbol{h}}(\bar{\boldsymbol{x}}_k)  \right\$
+\hat{\boldsymbol{x}}\_k =\bar{\boldsymbol{x}}\_{k} + {\boldsymbol{K}}\_k \left\[ {\boldsymbol{z}}\_k - {\boldsymbol{h}}(\bar{\boldsymbol{x}}\_k)  \right\]
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
-###### 誤差共分散推定
-<div align="center">$
+#### 誤差共分散推定
+$$
 \begin{eqnarray}
-\hat{\boldsymbol{P}}_k =\bar{\boldsymbol{P}}_{k} -  {\boldsymbol{K}}_k {\boldsymbol{H}}_k \bar{\boldsymbol{P}}_{k} 
+\hat{\boldsymbol{P}}\_k =\bar{\boldsymbol{P}}\_{k} -  {\boldsymbol{K}}\_k {\boldsymbol{H}}\_k \bar{\boldsymbol{P}}\_{k} 
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 
-#####予測更新
+### 予測更新
 
 
-###### 状態の予測
-<div align="center">$
+#### 状態の予測
+$$
 \begin{eqnarray}
-\bar{\boldsymbol{x}}_{k+1} =\boldsymbol{f}_d ( \hat{\boldsymbol{x}}_{k} ) 
+\bar{\boldsymbol{x}}\_{k+1} =\boldsymbol{f}\_d ( \hat{\boldsymbol{x}}\_{k} ) 
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
-###### 状態方程式ヤコビアンの準備
+#### 状態方程式ヤコビアンの準備
 
-<div align="center">$
+$$
 \begin{eqnarray}
-{\boldsymbol{F}_k} =\left. \frac{\partial \boldsymbol{f}_d}{\partial \boldsymbol{x}_k} \right|_{{\boldsymbol{x}}_k = \bar{\boldsymbol{x}}_k} 
-={\boldsymbol{I}}+\left. \frac{\partial \boldsymbol{f}}{\partial \boldsymbol{x}_k} \right|_{{\boldsymbol{x}}_k = \bar{\boldsymbol{x}}_k}  \Delta t
+{\boldsymbol{F}\_k} =\left. \frac{\partial \boldsymbol{f}\_d}{\partial \boldsymbol{x}\_k} \right|\_{{\boldsymbol{x}}\_k = \bar{\boldsymbol{x}}\_k} 
+={\boldsymbol{I}}+\left. \frac{\partial \boldsymbol{f}}{\partial \boldsymbol{x}\_k} \right|_{{\boldsymbol{x}}\_k = \bar{\boldsymbol{x}}\_k}  \Delta t
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
 
-###### 共分散の予測
-<div align="center">$
+#### 共分散の予測
+$$
 \begin{eqnarray}
-\bar{\boldsymbol{P}}_{k+1} ={\boldsymbol{F}_k} \hat{\boldsymbol{P}}_{k} {{\boldsymbol{F}}_k}^\mathsf{T}+ {\boldsymbol{G}_k}{\boldsymbol{Q}}{\boldsymbol{G}_k}^\mathsf{T}
+\bar{\boldsymbol{P}}\_{k+1} ={\boldsymbol{F}\_k} \hat{\boldsymbol{P}}\_{k} {{\boldsymbol{F}}\_k}^\mathsf{T}+ {\boldsymbol{G}\_k}{\boldsymbol{Q}}{\boldsymbol{G}\_k}^\mathsf{T}
 \\
 \\
 \end{eqnarray}
-$</div>
+$$
 
