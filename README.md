@@ -6,8 +6,8 @@
 
 拡張カルマンフィルタにおいて推定されるkステップ目の推定量は以下です。
 
-- 状態の推定値　[tex:\hat{\boldsymbol{x}}\_k]
-- 誤差共分散の推定値　[tex:\hat{\boldsymbol{P}}\_k]
+- 状態の推定値　$$\hat{\boldsymbol{x}}\_k$$
+- 誤差共分散の推定値　$$\hat{\boldsymbol{P}}\_k$$
 
 
 #### 計算にあたり必要とするもの
