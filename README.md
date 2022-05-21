@@ -13,8 +13,6 @@
 
 ## 計算にあたり必要とするもの
 
-- state $\hat{\boldsymbol{x}}\_k$
-
 - 状態方程式 $\dot{\boldsymbol{x}}={\boldsymbol{f(x)}}+{\boldsymbol{G}}{\boldsymbol{w}}$
 
 - 観測方程式  ${\boldsymbol{z}}={\boldsymbol{h(x)}}+{\boldsymbol{v}} $
@@ -39,7 +37,7 @@
 
 $$
 \begin{eqnarray}
-\frac{ \boldsymbol{x}_{k+1} - \boldsymbol{x}_{k} }{\Delta t} = {\boldsymbol{f}({\boldsymbol{x}_k})}  +{\boldsymbol{G}}{\boldsymbol{w}}
+\frac{ \boldsymbol{x}_{k+1} - \boldsymbol{x}_{k} }{\Delta t} = \boldsymbol{f}({\boldsymbol{x}_k})  +\boldsymbol{G} \boldsymbol{w}
 \end{eqnarray}
 $$
 
